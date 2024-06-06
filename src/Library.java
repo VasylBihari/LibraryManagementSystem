@@ -3,13 +3,13 @@ import java.util.Set;
 
 public class Library {
 
-    private Set<Book> library;
+    Set<Book> books=new HashSet<>();
 
-    public Library() {
-        this.library = new HashSet<>();
-    }
+//    public Library() {
+//        this.library = new HashSet<>();
+//    }
 
     public void addBook (Book book){                   //Додати книгу до колекції.
-        library.add(book);
+        books.add(book);
     }
 }

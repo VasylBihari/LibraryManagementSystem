@@ -8,7 +8,8 @@ public class Main {
         library.addBook(new Book(1003, "Pride and Prejudice", "Jane Austen",   1813, "Romance"));
         library.addBook(new Book(1004, "Moby-Dick", "Herman Melville",   1851, "Adventure"));
 
-
-
+        for (Book b: library.books){
+            System.out.println(b);
+        }
     }
 }
