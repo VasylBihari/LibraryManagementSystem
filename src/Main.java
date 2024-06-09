@@ -7,15 +7,20 @@ public class Main {
         library.addBook(new Book(1002, "The Great Gatsby", "F. Scott Fitzgerald",   1925, "Fiction"));
         library.addBook(new Book(1003, "Pride and Prejudice", "Jane Austen",   1813, "Romance"));
         library.addBook(new Book(1004, "Moby-Dick", "Herman Melville",   1851, "Adventure"));
-
+        System.out.println("Всі книги: ");
         for (Book b: library.books){
             System.out.println(b);
         }
         System.out.println("-----------------------");
 
-        library.removeBook(1000);
+        library.removeBook(1001);
+        System.out.println("Книги після видалення: ");
         for (Book b: library.books){
             System.out.println(b);
         }
+        System.out.println("-------------------------");
+
+        library.findBookTitle("Pride and Prejudice");
+        library.findBookTitle("Moby-Dick");
     }
 }
