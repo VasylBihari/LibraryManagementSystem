@@ -1,7 +1,9 @@
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Library {
 
@@ -28,5 +30,15 @@ public class Library {
                 .filter(book -> title== book.getTitle())
                 .findFirst();
         System.out.println(b);
+    }
+
+    //Пошук книги за автором
+    public void findBookAuthor (String author){
+        List<Book> a = books.stream()
+                .filter(book -> book.getAuthor().equals(author))
+                .collect(Collectors.toList());
+        for (Book s:a){
+            System.out.println(s);
+        }
     }
 }
