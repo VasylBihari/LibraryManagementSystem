@@ -47,5 +47,8 @@ public class Main {
         System.out.println("-----------------------------");
 
         library.countBooks();
+        System.out.println("--------------------------------");
+
+        library.countGenreBooks("Fantasy");
     }
 }

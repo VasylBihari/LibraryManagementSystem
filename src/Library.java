@@ -93,6 +93,8 @@ public class Library {
     }
 
     //Кількість книг кожного жанру
-
-
+    public void countGenreBooks (String genre){
+        Predicate<Book> filter = book -> book.getGenre()==genre;
+        System.out.println("В бібліотеці є " +  books.size(filter) + " книг з жанром " + genre);
+    }
 }
