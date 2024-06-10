@@ -40,6 +40,10 @@ public class Main {
         library.revisionBooks();
         System.out.println("-----------------------------");
 
+        library.sortTitleBooks();
+        System.out.println("-----------------------------");
+
+        library.sortYearBooks();
 
     }
 }

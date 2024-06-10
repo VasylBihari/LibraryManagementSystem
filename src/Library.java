@@ -66,4 +66,25 @@ public class Library {
             System.out.println(r);
         }
     }
+
+    //Перегляд усіх книг у бібліотеці за назвою в алфавітному порядку
+    public void sortTitleBooks (){
+        Comparator<Book> titleComparator = Comparator.comparing(Book::getTitle);
+
+        Set<Book> treeSet = new TreeSet<>(titleComparator);
+        treeSet.addAll(books);
+
+        System.out.println("Відсортований за назвою:");
+        treeSet.forEach(System.out::println);
+    }
+
+    //Перегляд усіх книг у бібліотеці за роком видання
+
+    public void sortYearBooks (){
+        Comparator<Book> yearComparator = Comparator.comparing(Book::getYear);
+        Set<Book> treeSetYear = new TreeSet<>(yearComparator);
+        treeSetYear.addAll(books);
+        System.out.println("Відсортований за роком:");
+        treeSetYear.forEach(System.out::println);
+    }
 }
