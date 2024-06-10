@@ -33,5 +33,13 @@ public class Main {
 
         library.findBookYear(1813);
 
+        System.out.println("-----------------------------");
+        library.findBookGenre("Fiction");
+        System.out.println("------------------------------");
+
+        library.revisionBooks();
+        System.out.println("-----------------------------");
+
+
     }
 }

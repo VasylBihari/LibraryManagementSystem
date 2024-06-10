@@ -1,7 +1,4 @@
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -52,4 +49,21 @@ public class Library {
         }
     }
 
+    //Пошук книг за жанром
+    public void findBookGenre (String genre){
+        List<Book> g = books.stream()
+                .filter(book -> book.getGenre().equals(genre))
+                .collect(Collectors.toList());
+        for (Book s:g){
+            System.out.println(s);
+        }
+    }
+
+    //Перегляд усіх книг у бібліотеці в порядку додавання
+    public void revisionBooks (){
+        Set <Book> bookSet = new LinkedHashSet<>(books);
+        for (Book r:bookSet){
+            System.out.println(r);
+        }
+    }
 }
