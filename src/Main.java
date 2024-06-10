@@ -29,5 +29,9 @@ public class Main {
 
         library.findBookAuthor("J.R.R. Tolkien");
 
+        System.out.println("----------------------------");
+
+        library.findBookYear(1813);
+
     }
 }

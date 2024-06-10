@@ -41,4 +41,15 @@ public class Library {
             System.out.println(s);
         }
     }
+
+    //Пошук книг за роком видання
+    public void findBookYear (int year){
+        List<Book> y = books.stream()
+                .filter(book -> book.getYear()==year)
+                .collect(Collectors.toList());
+        for (Book s:y){
+            System.out.println(s);
+        }
+    }
+
 }
