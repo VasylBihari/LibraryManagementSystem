@@ -79,7 +79,6 @@ public class Library {
     }
 
     //Перегляд усіх книг у бібліотеці за роком видання
-
     public void sortYearBooks (){
         Comparator<Book> yearComparator = Comparator.comparing(Book::getYear);
         Set<Book> treeSetYear = new TreeSet<>(yearComparator);
@@ -87,4 +86,13 @@ public class Library {
         System.out.println("Відсортований за роком:");
         treeSetYear.forEach(System.out::println);
     }
+
+    //Кількість книг у бібліотеці
+    public void countBooks (){
+        System.out.println("В бібліотеці є " + books.size() + " книг");
+    }
+
+    //Кількість книг кожного жанру
+
+
 }

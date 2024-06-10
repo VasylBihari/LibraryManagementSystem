@@ -44,6 +44,8 @@ public class Main {
         System.out.println("-----------------------------");
 
         library.sortYearBooks();
+        System.out.println("-----------------------------");
 
+        library.countBooks();
     }
 }
