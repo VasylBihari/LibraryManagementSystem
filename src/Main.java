@@ -55,5 +55,8 @@ public class Main {
         for (Book b: library.books){
             System.out.println(b);
         }
+        System.out.println("------------------------------------");
+
+        library.countGenreBooks("Fantasy");
     }
 }

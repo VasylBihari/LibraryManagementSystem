@@ -103,6 +103,14 @@ public class Library {
 
     //Кількість книг кожного жанру
     public void countGenreBooks (String genre){
-
+      int count =0;
+      Iterator <Book> iterator = books.iterator();
+        while (iterator.hasNext()) {
+            Book book = iterator.next();
+            if (book.getGenre()==genre){
+                count++;
+            }
+        }
+        System.out.println("В бібліотеці є " + count + " книг з жанром " + genre);
     }
 }
