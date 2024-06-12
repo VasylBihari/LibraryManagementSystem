@@ -4,80 +4,81 @@ import java.util.stream.Collectors;
 
 public class Library {
 
-    Set<Book> books=new HashSet<>();
+    Set<Book> books = new HashSet<>();
 
     //Додати книгу до колекції
-    public void addBook (Book book){
+    public void addBook(Book book) {
         books.add(book);
     }
 
     //Видалити книгу за ідентифікатором.
-    public void removeBook (int num){
-        Predicate<Book> filter = book -> book.getId()==num;
-            books.removeIf(filter);
+    public void removeBook(int num) {
+        Predicate<Book> filter = book -> book.getId() == num;
+        books.removeIf(filter);
     }
-//  //Оновити інформацію про книгу (за ідентифікатором).
-    public void replaceBook (Book updatedBook){
-      Iterator <Book> iterator = books.iterator();
-      while (iterator.hasNext()){
-          Book book = iterator.next();
-          if (book.getId()== updatedBook.getId()){
-              iterator.remove();
-              books.add(updatedBook);
-              break;
-          }
-      }
+
+    //  //Оновити інформацію про книгу (за ідентифікатором).
+    public void replaceBook(Book updatedBook) {
+        Iterator<Book> iterator = books.iterator();
+        while (iterator.hasNext()) {
+            Book book = iterator.next();
+            if (book.getId() == updatedBook.getId()) {
+                iterator.remove();
+                books.add(updatedBook);
+                break;
+            }
+        }
         System.out.println("книга змінена");
     }
 
-     //Пошук книги за назвою
-    public void findBookTitle (String title){
-        Optional <Book> b = books.stream()
-                .filter(book -> title== book.getTitle())
+    //Пошук книги за назвою
+    public void findBookTitle(String title) {
+        Optional<Book> b = books.stream()
+                .filter(book -> title.equals(book.getTitle()))
                 .findFirst();
         System.out.println(b);
     }
 
     //Пошук книги за автором
-    public void findBookAuthor (String author){
+    public void findBookAuthor(String author) {
         List<Book> a = books.stream()
                 .filter(book -> book.getAuthor().equals(author))
                 .collect(Collectors.toList());
-        for (Book s:a){
+        for (Book s : a) {
             System.out.println(s);
         }
     }
 
     //Пошук книг за роком видання
-    public void findBookYear (int year){
+    public void findBookYear(int year) {
         List<Book> y = books.stream()
-                .filter(book -> book.getYear()==year)
+                .filter(book -> book.getYear() == year)
                 .collect(Collectors.toList());
-        for (Book s:y){
+        for (Book s : y) {
             System.out.println(s);
         }
     }
 
     //Пошук книг за жанром
-    public void findBookGenre (String genre){
+    public void findBookGenre(String genre) {
         List<Book> g = books.stream()
                 .filter(book -> book.getGenre().equals(genre))
                 .collect(Collectors.toList());
-        for (Book s:g){
+        for (Book s : g) {
             System.out.println(s);
         }
     }
 
     //Перегляд усіх книг у бібліотеці в порядку додавання
-    public void revisionBooks (){
-        Set <Book> bookSet = new LinkedHashSet<>(books);
-        for (Book r:bookSet){
+    public void revisionBooks() {
+        Set<Book> bookSet = new LinkedHashSet<>(books);
+        for (Book r : bookSet) {
             System.out.println(r);
         }
     }
 
     //Перегляд усіх книг у бібліотеці за назвою в алфавітному порядку
-    public void sortTitleBooks (){
+    public void sortTitleBooks() {
         Comparator<Book> titleComparator = Comparator.comparing(Book::getTitle);
 
         Set<Book> treeSet = new TreeSet<>(titleComparator);
@@ -88,7 +89,7 @@ public class Library {
     }
 
     //Перегляд усіх книг у бібліотеці за роком видання
-    public void sortYearBooks (){
+    public void sortYearBooks() {
         Comparator<Book> yearComparator = Comparator.comparing(Book::getYear);
         Set<Book> treeSetYear = new TreeSet<>(yearComparator);
         treeSetYear.addAll(books);
@@ -97,20 +98,27 @@ public class Library {
     }
 
     //Кількість книг у бібліотеці
-    public void countBooks (){
+    public void countBooks() {
         System.out.println("В бібліотеці є " + books.size() + " книг");
     }
 
     //Кількість книг кожного жанру
-    public void countGenreBooks (String genre){
-      int count =0;
-      Iterator <Book> iterator = books.iterator();
+    public void countGenreBooks(String genre) {
+        int count = 0;
+        Iterator<Book> iterator = books.iterator();
         while (iterator.hasNext()) {
             Book book = iterator.next();
-            if (book.getGenre()==genre){
+            if (book.getGenre() == genre) {
                 count++;
             }
         }
-        System.out.println("В бібліотеці є " + count + " книг з жанром " + genre);
+        if (count == 1) {
+            System.out.println("В бібліотеці є " + count + " книга з жанром " + genre);
+        } else if (count >= 2 && count <= 4) {
+            System.out.println("В бібліотеці є " + count + " книги з жанром " + genre);
+        } else {
+            System.out.println("В бібліотеці є " + count + " книг з жанром " + genre);
+        }
     }
+
 }

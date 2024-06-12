@@ -57,6 +57,12 @@ public class Main {
         }
         System.out.println("------------------------------------");
 
+        library.countGenreBooks("Fiction");
+        library.countGenreBooks("Science Fiction");
+        library.countGenreBooks("Romance");
         library.countGenreBooks("Fantasy");
+
+        System.out.println("--------------------------------");
+
     }
 }
