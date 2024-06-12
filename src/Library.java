@@ -17,9 +17,18 @@ public class Library {
             books.removeIf(filter);
     }
 //  //Оновити інформацію про книгу (за ідентифікатором).
-//    public void replaceBook (Book book){
-//
-//    }
+    public void replaceBook (Book updatedBook){
+      Iterator <Book> iterator = books.iterator();
+      while (iterator.hasNext()){
+          Book book = iterator.next();
+          if (book.getId()== updatedBook.getId()){
+              iterator.remove();
+              books.add(updatedBook);
+              break;
+          }
+      }
+        System.out.println("книга змінена");
+    }
 
      //Пошук книги за назвою
     public void findBookTitle (String title){
@@ -94,7 +103,6 @@ public class Library {
 
     //Кількість книг кожного жанру
     public void countGenreBooks (String genre){
-        Predicate<Book> filter = book -> book.getGenre()==genre;
-        System.out.println("В бібліотеці є " +  books.size(filter) + " книг з жанром " + genre);
+
     }
 }

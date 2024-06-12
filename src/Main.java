@@ -49,6 +49,11 @@ public class Main {
         library.countBooks();
         System.out.println("--------------------------------");
 
-        library.countGenreBooks("Fantasy");
+        library.replaceBook(new Book(1000, "The Lord of the Rings", "J.R.R. Tolkien", 1954, "Fantasy"));
+
+        System.out.println("Всі книги: ");
+        for (Book b: library.books){
+            System.out.println(b);
+        }
     }
 }
