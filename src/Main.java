@@ -10,9 +10,7 @@ public class Main {
         library.addBook(new Book(1005, "The Hobbit ", "J.R.R. Tolkien",   1937, "Fantasy"));
         library.addBook(new Book(1006, "The Lord of the Rings", "J.R.R. Tolkien",   1954, "Fantasy"));
         System.out.println("Всі книги: ");
-        for (Book b: library.books){
-            System.out.println(b);
-        }
+        library.printFormattedBooks();
         System.out.println("-----------------------");
 
         library.removeBook(1001);

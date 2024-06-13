@@ -121,4 +121,11 @@ public class Library {
         }
     }
 
+    public void printFormattedBooks (){
+        String format = " %-4s  %-25s  %-20s  %-4s  %-15s %n";
+        for (Book book : books) {
+            System.out.format(format, book.getId(), book.getTitle(), book.getAuthor(), book.getYear(), book.getGenre());
+        }
+    }
+
 }
