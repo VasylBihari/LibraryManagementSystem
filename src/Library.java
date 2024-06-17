@@ -8,7 +8,11 @@ public class Library {
 
     //Додати книгу до колекції
     public void addBook(Book book) {
-        books.add(book);
+        if (books.contains(book)){
+            System.out.println("Книга вже є в бібліотеці");
+        } else {
+            books.add(book);
+        }
     }
 
     //Видалити книгу за ідентифікатором.
