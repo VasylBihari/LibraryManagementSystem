@@ -17,8 +17,12 @@ public class Library {
 
     //Видалити книгу за ідентифікатором.
     public void removeBook(int num) {
-        Predicate<Book> filter = book -> book.getId() == num;
-        books.removeIf(filter);
+        if (books.contains(num)) {
+            Predicate<Book> filter = book -> book.getId() == num;
+            books.removeIf(filter);
+        } else {
+            System.out.println("Книги з таким ідентифікатором не існує");
+        }
     }
 
     //  //Оновити інформацію про книгу (за ідентифікатором).
