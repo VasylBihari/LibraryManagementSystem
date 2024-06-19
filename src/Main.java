@@ -14,7 +14,7 @@ public class Main {
         System.out.println("-----------------------");
 
        //видалення книги за ідентифікатором
-        library.removeBook(25);
+        library.removeBook(1000);
         System.out.println("Книги після видалення: ");
         for (Book b: library.books){
             System.out.println(b);

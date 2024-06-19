@@ -41,10 +41,12 @@ public class Library {
 
     //Пошук книги за назвою
     public void findBookTitle(String title) {
-        Optional<Book> b = books.stream()
-                .filter(book -> title.equals(book.getTitle()))
-                .findFirst();
-        System.out.println(b);
+
+            Optional<Book> b = books.stream()
+                    .filter(book -> title.equals(book.getTitle()))
+                    .findFirst();
+            System.out.println(b);
+
     }
 
     //Пошук книги за автором
